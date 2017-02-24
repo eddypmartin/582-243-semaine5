@@ -11,15 +11,7 @@
 			border: 1px solid #aaa;
 		}
 
-		.rouge {
-			background-color: #f00;
-		}
-		.bleu {
-			background-color: #00f;
-		}
-		.vert {
-			background-color: #0f0;
-		}
+
 	</style>
 </head>
 <body>
@@ -117,8 +109,21 @@
 console.log(elmTd.length)
 for (var i=0 ; i<elmTd.length ; i++)
 {
-		elmTd[i].classList.add(this.value)
+
+
+	switch(obj.value)
+	{
+		case 'rouge' : elmTd[i].style.backgroundColor = '#f00'; break;
+		case 'vert' : elmTd[i].style.backgroundColor = '#0f0'; break;
+		case 'bleu' : elmTd[i].style.backgroundColor = '#00f'; break;		
+
+	}
+
 }
+
+
+
+
 }
 	
 
