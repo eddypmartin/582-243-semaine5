@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Introduction au formulaire</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style type="text/css">
+		
+		main {
+			width : 900px;
+			margin : 0 auto;
+			border: 1px solid #aaa;
+		}
+
+		.rouge {
+			background-color: #f00;
+		}
+		.bleu {
+			background-color: #00f;
+		}
+		.vert {
+			background-color: #0f0;
+		}
+	</style>
+</head>
+<body>
+		<main>
+			<form>
+				<input type="radio" name='radStyle' value='rouge' onclick='changeCouleur(this)'>
+				<input type="radio" name='radStyle' value='bleu'  onclick='changeCouleur(this)'>
+				<input type="radio" name='radStyle' value='vert' onclick='changeCouleur(this)'>	
+			</form>
+
+
+			<table>
+				<tr>
+					<th>Code ISO</th>
+					<th>Provinces</th>
+					<th>Population</th>
+				</tr>
+				<tr>
+					<td>QC</td>
+					<td>Québec</td>
+					<td>8,215 million</td>
+				</tr>
+				<tr>
+					<td>ON</td>
+					<td>Ontario</td>
+					<td>13,6 million</td>					
+				</tr>
+				<tr>
+					<td>MB</td>
+					<td>Manitoba</td>
+					<td>1,282 million</td>	
+				</tr>
+				<tr>
+					<td>SK</td>
+					<td>Saskatshewan</td>
+					<td>1,13 million</td>						
+				</tr>	
+				<tr>
+					<td>AB</td>
+					<td>Alberta</td>
+					<td>4,146 million</td>						
+				</tr>
+				<tr>
+					<td>BC</td>
+					<td>Colombie-Britanique</td>
+					<td>4,631 million</td>						
+				</tr>
+				<tr>
+					<td>NL</td>
+					<td>Terre-Neuve</td>
+					<td>0,528 million</td>						
+				</tr>
+				<tr>
+					<td>NS</td>
+					<td>Nouvelle-Écosse</td>
+					<td>0,943 million</td>						
+				</tr>
+				<tr>
+					<td>NB</td>
+					<td>Nouveau-brunswick</td>
+					<td>0,754 million</td>						
+				</tr>
+				<tr>
+					<td>PI</td>
+					<td>Ile du Prince-Édouard</td>
+					<td>0,146 million</td>						
+				</tr>
+				<tr>
+					<td>YT</td>
+					<td>Yukon</td>
+					<td>0,0339 million</td>						
+				</tr>
+				<tr>
+					<td>NT</td>
+					<td>Territoire du Nord-Ouest</td>
+					<td>0,0415 million</td>						
+				</tr>	
+				<tr>
+					<td>NU</td>
+					<td>Nunavut</td>
+					<td>0,035 million</td>						
+				</tr>																															
+
+			</table>
+
+		</main>
+</body>
+<script type="text/javascript">
+
+
+
+	function changeCouleur(obj){
+
+	var elmTd = document.querySelectorAll('table td')
+console.log(elmTd.length)
+for (var i=0 ; i<elmTd.length ; i++)
+{
+		elmTd[i].classList.add(this.value)
+}
+}
+	
+
+
+</script>
+
+</html>
