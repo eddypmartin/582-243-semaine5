@@ -5,11 +5,30 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style type="text/css">
 		
+
+		body {font-family : arial;}
+
 		main {
 			width : 900px;
 			margin : 0 auto;
 			border: 1px solid #aaa;
 		}
+
+		table {
+
+			border-collapse: collapse;
+		}
+
+		table td {
+			border: 1px solid #aaa;
+			
+		}
+
+		label {
+
+			margin: 10px;
+		}
+
 
 
 	</style>
@@ -17,10 +36,37 @@
 <body>
 		<main>
 			<form>
-				<input type="radio" name='radStyle' value='rouge' onclick='changeCouleur(this)'>
-				<input type="radio" name='radStyle' value='bleu'  onclick='changeCouleur(this)'>
-				<input type="radio" name='radStyle' value='vert' onclick='changeCouleur(this)'>	
+				<fieldset>
+					<label>
+						Rouge
+						<input type="radio" name='radStyle' value='rouge' onclick='changeCouleur(this)'>
+					</label>
+					<label>
+						Bleu	
+						<input type="radio" name='radStyle' value='bleu'  onclick='changeCouleur(this)'>
+					</label>
+					<label>
+						vert	
+						<input type="radio" name='radStyle' value='vert' onclick='changeCouleur(this)'>	
+					</label>	
+				</fieldset>
+				<fieldset>
+					<label>Padding
+						<select onchange="changePadding(this)">
+							<option value="3px">3px</option>
+							<option value="4px">4px</option>
+							<option value="5px">5px</option>
+							<option value="6px">6px</option>
+						</select>
+					</label>
+				</fieldset>
+
+
+
 			</form>
+
+
+
 
 
 			<table>
@@ -101,30 +147,51 @@
 </body>
 <script type="text/javascript">
 
-
+	var elmTd = document.querySelectorAll('table td')
+	console.log(elmTd.length)
 
 	function changeCouleur(obj){
 
-	var elmTd = document.querySelectorAll('table td')
-console.log(elmTd.length)
-for (var i=0 ; i<elmTd.length ; i++)
-{
 
-
-	switch(obj.value)
+	for (var i=0 ; i<elmTd.length ; i++)
 	{
-		case 'rouge' : elmTd[i].style.backgroundColor = '#f00'; break;
-		case 'vert' : elmTd[i].style.backgroundColor = '#0f0'; break;
-		case 'bleu' : elmTd[i].style.backgroundColor = '#00f'; break;		
+
+
+		switch(obj.value)
+		{
+			case 'rouge' : 
+			elmTd[i].style.backgroundColor = '#f00';
+			elmTd[i].style.color = '#fff';
+			break;
+
+			case 'vert' : 
+				elmTd[i].style.backgroundColor = '#0f0'; 
+				elmTd[i].style.color = '#333';
+				break;
+			case 'bleu' : 
+				elmTd[i].style.backgroundColor = '#00f'; 
+				elmTd[i].style.color = '#eee';
+				break;		
+
+		}
 
 	}
-
 }
 
 
+	function changePadding(obj)
+	{	for (var i=0 ; i<elmTd.length ; i++)
+		{
+			elmTd[i].style.padding = obj.value;
+		}
+	} 
+
+	
 
 
-}
+
+
+	
 	
 
 
